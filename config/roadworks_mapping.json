@@ -1,0 +1,59 @@
+{
+  "closure": {
+    "dynamic": "false",
+    "properties": {
+      "centre_easting": {
+        "type": "long"
+      },
+      "centre_northing": {
+        "type": "long"
+      },
+      "closure_type": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "description": {
+        "type": "string"
+      },
+      "end_date": {
+        "type": "date",
+        "format": "dd/MM/yyyy HH:mm:ss"
+      },
+      "expected_delay": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "local_authority": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "location": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "published_date": {
+        "type": "date",
+        "format": "dd/MM/yyyy HH:mm:ss"
+      },
+      "reference_number": {
+        "type": "long"
+      },
+      "road": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "start_date": {
+        "type": "date",
+        "format": "dd/MM/yyyy HH:mm:ss"
+      },
+      "status": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "traffic_management": {
+        "type": "string",
+        "index": "not_analyzed"
+      }
+    }
+  }
+}

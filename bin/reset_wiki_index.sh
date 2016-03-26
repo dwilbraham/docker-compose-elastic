@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 es=localhost:`docker-compose port elasticsearch 9200 | cut -d: -f2`
 
