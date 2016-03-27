@@ -1,3 +1,3 @@
 #!/bin/bash
 
-firefox localhost:`docker-compose port kibana 5601 | cut -d: -f2`
+firefox $($(dirname $0)/service_address.sh kibana 5601)

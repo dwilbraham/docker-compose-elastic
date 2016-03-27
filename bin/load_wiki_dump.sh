@@ -1,6 +1,6 @@
 #!/bin/bash
 
-es=localhost:`docker-compose port elasticsearch 9200 | cut -d: -f2`
+es=$($(dirname $0)/service_address.sh elasticsearch 9200)
 
 if [ $# == 1 ]
 then

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-es=localhost:`docker-compose port elasticsearch 9200 | cut -d: -f2`
+es=$($(dirname $0)/service_address.sh elasticsearch 9200)
 index=roadworks
 
 echo "Remove existing index (this will fail if it doesn't already exist)"
