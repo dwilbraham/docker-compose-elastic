@@ -25,7 +25,7 @@ To play with some example data try one of the following:
 
 Following an elastic blog on [loading wikipedia search data into elastic](https://www.elastic.co/blog/loading-wikipedia).
 
-As explained in the blog post choose and download a dump of one of the wikimedia sites from [here](https://dumps.wikimedia.org/other/cirrussearch/).
+As explained in the blog post choose and download a dump of one of the wikimedia sites from [here](https://dumps.wikimedia.org/other/cirrussearch/) (these instructions assume you use the enwikiquote content dump).
 
 Install the required plugin into elastic (and the sense plugin for kibana because it is very useful):
 
@@ -41,6 +41,8 @@ bin/load_wiki_dump.sh PATH_TO_DUMP_FILE
 ```
 
 If you are using firefox you can view your new index in kibana by running ```bin/firefox_kibana.sh``` and setting up searching of a new index called ```enwikiquote```.
+
+If you want to experiment with some other wikimedia dump files the above scripts accept arguments to change the index type and name.
 
 ### UK roadworks:
 
