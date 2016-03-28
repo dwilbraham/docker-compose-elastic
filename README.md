@@ -1,17 +1,29 @@
 # docker-compose-elastic
 
-[Docker Compose](https://docs.docker.com/compose/) configuration and tools for experimenting with [elasticsearch](https://www.elastic.co/) and [kibana](https://www.elastic.co/products/kibana).
+[Docker Compose](https://docs.docker.com/compose/) configuration and scripts for experimenting with [elasticsearch](https://www.elastic.co/) and [kibana](https://www.elastic.co/products/kibana).
 
 To run elasticsearch and kibana run:
 ```bash
 docker-compose up -d
 ```
 
+To validate that elasticsearch started correctly run:
+```bash
+es=`bin/service_address.sh elasticsearch 9200`
+curl $es/
+curl $es/_cluster/state?pretty
+```
+
+This setup and the example scripts should be compatible with any of the following scenarios:
+- Local Docker instance
+- Remote [Docker Machine](https://docs.docker.com/machine/) instance
+- Remote [Docker Swarm](https://docs.docker.com/swarm/) cluster
+
 To play with some example data try one of the following:
 
 ### Wikipedia search:
 
-Following an elastic blog on [how to load wikipedia search data into elastic](https://www.elastic.co/blog/loading-wikipedia).
+Following an elastic blog on [loading wikipedia search data into elastic](https://www.elastic.co/blog/loading-wikipedia).
 
 As explained in the blog post choose and download a dump of one of the wikimedia sites from [here](https://dumps.wikimedia.org/other/cirrussearch/).
 
@@ -28,7 +40,7 @@ bin/reset_wiki_index.sh
 bin/load_wiki_dump.sh PATH_TO_DUMP_FILE
 ```
 
-If you are using firefox you can view your new index in kibana by running ```bin/firefox_kibana.sh```
+If you are using firefox you can view your new index in kibana by running ```bin/firefox_kibana.sh``` and setting up searching of a new index called ```enwikiquote```.
 
 ### UK roadworks:
 
@@ -46,6 +58,6 @@ To load data into the index for a given UK road run the following for as many di
 bin/load_roadworks_data.sh M1
 ```
 
-If you are using firefox you can view your new index in kibana by running ```bin/firefox_kibana.sh```
+If you are using firefox you can view your new index in kibana by running ```bin/firefox_kibana.sh``` and setting up searching of a new index called ```roadworks```.
 
 > Written with [StackEdit](https://stackedit.io/).
