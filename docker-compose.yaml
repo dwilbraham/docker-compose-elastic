@@ -7,7 +7,7 @@ services:
     networks:
       elastic-net:
     volumes:
-      - /usr/share/elasticsearch/data
+      - elastic-data:/usr/share/elasticsearch/data
   kibana:
     image: kibana
     ports:
@@ -21,3 +21,6 @@ services:
 
 networks:
   elastic-net:
+
+volumes:
+  elastic-data:
